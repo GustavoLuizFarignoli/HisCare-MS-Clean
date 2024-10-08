@@ -29,6 +29,10 @@ const UserSchema = new mongoose.Schema({
     telefone: {
         type: String,
         required: true
+    },
+    Crm_Medico: {
+        type: String,
+        required: true
     }
 });
 
