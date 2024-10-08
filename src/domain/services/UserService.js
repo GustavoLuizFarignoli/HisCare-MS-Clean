@@ -46,10 +46,10 @@ const updateUser = async (id, updateData) => {
 // Função para deletar um usuário
 const deleteUser = async (id) => {
     try {
-        const deletedUser = await UserRepository.deleteUser(id);
+        const deletedUser = await UserRepository.deleteUser(id); // Use deleteUser que foi definido no repositório
         return deletedUser;
     } catch (error) {
-        throw new Error(error);
+        throw new Error('Erro ao deletar o usuário');
     }
 };
 

@@ -23,7 +23,8 @@ const update = async (id, updateData) => {
 
 // Função para deletar um usuário
 const deleteUser = async (id) => {
-    return await User.deleteUser(id);
+    // Aqui estamos chamando o método correto do mongoose
+    return await User.findByIdAndDelete(id);
 };
 
 module.exports = {

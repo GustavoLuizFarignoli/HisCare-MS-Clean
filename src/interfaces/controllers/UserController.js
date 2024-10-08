@@ -4,15 +4,17 @@ const UserService = require('../../domain/services/UserService');
 const UpdateUser = require('../../application/usecases/UpdateUser');
 
 // Rota para criar um novo usuário (POST)
+// Rota para criar um novo usuário (POST)
 router.post('/', async (req, res) => {
     try {
-        const { name, email, age } = req.body;
-        const newUser = await UserService.createUser({ name, email, age });
+        const { name, email, aniversario, sexo, altura, peso, telefone, Crm_Medico } = req.body;
+        const newUser = await UserService.createUser({ name, email, aniversario, sexo, altura, peso, telefone, Crm_Medico });
         res.status(201).json(newUser);
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
 });
+
 
 // Rota para obter todos os usuários (GET)
 router.get('/', async (req, res) => {
