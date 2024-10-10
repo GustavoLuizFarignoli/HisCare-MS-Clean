@@ -3,8 +3,6 @@ services:
     build: .
     ports:
       - "3000:3000"
-    depends_on:
-      - mongodb
     environment:
       MONGO_URI: mongodb+srv://gustavofarignoli:SQmSzBvJfmO0lnQn@hiscare.x1hql.mongodb.net/?retryWrites=true&w=majority&appName=HISCare
     volumes:
@@ -13,19 +11,6 @@ services:
       - app-network
     env_file:
       - .env
-
-
-  mongodb:
-    image: mongo:latest
-    ports:
-      - "27017:27017"
-    volumes:
-      - mongo-data:/data/db
-    networks:
-      - app-network
-
-volumes:
-  mongo-data:
 
 networks:
   app-network:
