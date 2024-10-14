@@ -13,7 +13,7 @@ const app = express();
 app.use(express.json());
 
 // Conectar ao MongoDB (verifique se a URI do MongoDB está no arquivo .env)
-mongoose.connect("mongodb+srv://gustavofarignoli:SQmSzBvJfmO0lnQn@hiscare.x1hql.mongodb.net/?retryWrites=true&w=majorityappName=HISCare", { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(`mongodb+srv://gustavofarignoli:SQmSzBvJfmO0lnQn@hiscare.x1hql.mongodb.net/?retryWrites=true&w=majority&appName=HISCare`, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('Conectado ao MongoDB'))
     .catch(err => console.error('Erro ao conectar ao MongoDB:', err));
 
